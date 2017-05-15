@@ -40,4 +40,11 @@ export default class Artifier {
     let alpha = imageData[redIndex + 3];
     return [red, green, blue, alpha];
   }
+
+  //TODO: use spread operator maybe?
+  appendArray(arr1, arr2) {
+    for (let i = 0; i < arr2.length; i++) {
+      arr1.push(arr2[i]);
+    }
+  }
 }

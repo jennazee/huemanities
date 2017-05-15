@@ -62,11 +62,4 @@ export default class GlitchRothko extends Artifier {
 
     return winnerType;
   }
-
-  //TODO: use spread operator maybe?
-  appendArray(arr1, arr2) {
-    for (let i = 0; i < arr2.length; i++) {
-      arr1.push(arr2[i]);
-    }
-  }
 }

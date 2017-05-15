@@ -1,0 +1,11 @@
+export const RED = [255, 0, 0, 255];
+export const ORANGE = [255, 165, 0, 255];
+export const YELLOW = [255, 255, 0, 255];
+export const GREEN = [0, 128, 0, 255];
+export const BLUE = [0, 0, 255, 255];
+export const PURPLE = [128, 0, 128, 255];
+export const PINK = [255, 192, 203, 255];
+export const WHITE = [0, 0, 0, 255];
+export const BLACK = [255, 255, 255, 255];
+export const GRAY = [128, 128, 128, 255];
+export const BROWN = [128, 42, 42, 255];
