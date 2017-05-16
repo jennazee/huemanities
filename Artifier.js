@@ -3,25 +3,26 @@ export default class Artifier {
     this.artifyImageOnload();
   }
 
-  artifyImageWithOnload() {
-    document.addEventListener('DOMContentLoaded', function() {
+  artifyImageOnload() {
+    document.addEventListener('DOMContentLoaded', () => {
       const canvas = document.querySelector('.Canvas');
       const canvasCtx = canvas.getContext('2d');
 
       const uploader = document.querySelector('.Uploader');
 
-      uploader.addEventListener('change', function(){
+      uploader.addEventListener('change', (e) => {
         let img = new Image();
         let reader = new FileReader();
         reader.onload = function(e) {
           img.src = e.target.result;
         };
-        reader.readAsDataURL(this.files[0]);
-        img.onload = function() {
+        reader.readAsDataURL(e.target.files[0]);
+        img.onload = () => {
           canvas.height = img.height;
           canvas.width = img.width;
           canvasCtx.drawImage(img, 0, 0);
 
+          //"this" needs to be Artifier
           let newImgData = new ImageData(this.artFunction(canvasCtx, canvas.width, canvas.height), img.width);
 
           canvasCtx.putImageData(newImgData, 0, 0);
@@ -30,7 +31,9 @@ export default class Artifier {
     });
   };
 
-  artFunction() { }
+  artFunction() {
+    // to be filled in by subclasses
+  }
 
   getPixelAt(h, w, imWidth, imageData) {
     let redIndex = 4 * h * imWidth + w * 4;

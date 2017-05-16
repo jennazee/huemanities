@@ -14,7 +14,7 @@ export default class BasicColorTerminal extends Artifier {
 
     for (let h = 0; h < height; h++) {
       for (let w = 0; w < width; w++) {
-        let current = getPixelAt(h, w, width, imageData);
+        let current = this.getPixelAt(h, w, width, imageData);
 
         let closest;
         let minDist = 1000000000; //temp
@@ -29,7 +29,7 @@ export default class BasicColorTerminal extends Artifier {
             closest = color;
           }
         }
-        appendArray(newImageArray, closest);
+        this.appendArray(newImageArray, closest);
       }
     }
     return new Uint8ClampedArray(newImageArray);
