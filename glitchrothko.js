@@ -14,7 +14,7 @@ export default class GlitchRothko extends Artifier {
 
     for (let h = 0; h < height; h++) {
       for (let w = 0; w < width; w++) {
-        let current = getPixelAt(h, w, width, imageData);
+        let current = this.getPixelAt(h, w, width, imageData);
 
         let winnerType = this.getHighestOfThree(current);
 
