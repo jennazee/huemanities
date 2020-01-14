@@ -6,7 +6,7 @@ export default class GlitchRothko extends Artifier {
   }
 
   artFunction(ctx, width, height) {
-    let imageData = ctx.getImageData(0, 0, width, height).data;
+    const imageData = ctx.getImageData(0, 0, width, height).data;
     let reds = [];
     let greens = [];
     let blues = [];
@@ -19,25 +19,25 @@ export default class GlitchRothko extends Artifier {
         let winnerType = this.getHighestOfThree(current);
 
         if (winnerType === 'red') {
-          this.appendArray(reds, current);
+          this.mergeArrays(reds, current);
         }
         if (winnerType === 'green') {
-          this.appendArray(greens, current);
+          this.mergeArrays(greens, current);
         }
         if (winnerType === 'blue') {
-          this.appendArray(blues, current);
+          this.mergeArrays(blues, current);
         }
         if (winnerType === 'grayscale') {
-          this.appendArray(grayscales, current);
+          this.mergeArrays(grayscales, current);
         }
       }
     }
 
     let newImageArray = [];
-    this.appendArray(newImageArray, reds);
-    this.appendArray(newImageArray, greens);
-    this.appendArray(newImageArray, blues);
-    this.appendArray(newImageArray, grayscales);
+    this.mergeArrays(newImageArray, reds);
+    this.mergeArrays(newImageArray, greens);
+    this.mergeArrays(newImageArray, blues);
+    this.mergeArrays(newImageArray, grayscales);
     return new Uint8ClampedArray(newImageArray);
   }
 

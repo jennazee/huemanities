@@ -9,13 +9,24 @@
     <link rel="stylesheet" type="text/css" href="huemanity.css">
   </head>
 
-  <header>
-    <h1>basic color terminal (euclidean)</h1>
-  </header>
-
   <body>
-    <input type="file" name="photo" class="Uploader" />
-    <canvas class="Canvas"></canvas>
+    <header>
+      <h1>basic color terminal (rgb)</h1>
+    </header>
+
+    <div class="Content">
+      <input type="file" name="photo" class="Uploader" />
+      <div class="Error Hidden">
+        <h2>Hi. Um. Sorry. This is awkward.</h2>
+        <p>I am but made of humble JavaScript and that file has too many pixels in it for me to not crash your browser. Try another one?</p>
+      </div>
+      <canvas class="Canvas"></canvas>
+    </div>
+
+    <footer class="Footer Hidden">
+      <h2>Cool, what's happening?</h2>
+      <p>All the colors are swapped out for whichever of the English <a  target="_blank" href="https://en.wikipedia.org/wiki/Color_term#Basic_colour_terms">"basic color term"</a> CSS colors has the closest RGB value based on Euclidean distance</p>
+    </footer>
   </body>
 
 </html>

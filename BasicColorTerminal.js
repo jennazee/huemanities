@@ -1,7 +1,7 @@
 import {RED, ORANGE, YELLOW, GREEN, BLUE, PURPLE, PINK, WHITE, BLACK, GRAY, BROWN} from './constants.js';
 import Artifier from './Artifier.js';
 
-export default class BasicColorTerminal extends Artifier {
+class BasicColorTerminal extends Artifier {
   constructor() {
     super();
     this.colors = [RED, ORANGE, YELLOW, GREEN, BLUE, PURPLE, PINK, WHITE, BLACK, GRAY, BROWN];
@@ -10,14 +10,17 @@ export default class BasicColorTerminal extends Artifier {
   artFunction(ctx, width, height) {
     const imageData = ctx.getImageData(0, 0, width, height).data;
     const colors = this.colors;
-    let newImageArray = [];
+    const newImageArray = [];
 
     for (let h = 0; h < height; h++) {
       for (let w = 0; w < width; w++) {
         let current = this.getPixelAt(h, w, width, imageData);
+        if (current[3] !== 255) {
+          current = this.rgbaToRgb(current);
+        }
 
         let closest;
-        let minDist = 1000000000; //temp
+        let minDist = 1000000000; // temporary
         for (let i = 0; i < colors.length; i++) {
           let color = colors[i];
           let redDiff = color[0] - current[0];
@@ -29,9 +32,11 @@ export default class BasicColorTerminal extends Artifier {
             closest = color;
           }
         }
-        this.appendArray(newImageArray, closest);
+        this.mergeArrays(newImageArray, closest);
       }
     }
     return new Uint8ClampedArray(newImageArray);
   }
 }
+
+const bct = new BasicColorTerminal();

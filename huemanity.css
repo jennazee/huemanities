@@ -1,5 +1,41 @@
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: monospace;
+  display: flex;
+  flex-direction: column;
+}
+
+a, a:visited, a:hover{
+  color: black;
+}
+
+.Content {
+  flex: 1 0 auto;
+}
+
+.Error {
+  font-size: 12px;
+}
+
+.Hidden {
+  display: none;
+}
+
+.Footer {
+  margin-top: 32px;
+  flex-shrink: 0;
+  border-top: 1px solid black;
+}
+
+p {
+  font-size: 12px;
+}
+
+h2 {
+  font-size: 16px;
 }
 
 .Uploader {
