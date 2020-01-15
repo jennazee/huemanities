@@ -16,10 +16,6 @@ a, a:visited, a:hover{
   flex: 1 0 auto;
 }
 
-.Error {
-  font-size: 12px;
-}
-
 .Hidden {
   display: none;
 }
@@ -28,10 +24,6 @@ a, a:visited, a:hover{
   margin-top: 32px;
   flex-shrink: 0;
   border-top: 1px solid black;
-}
-
-p {
-  font-size: 12px;
 }
 
 h2 {
