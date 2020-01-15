@@ -16,10 +16,6 @@ a, a:visited, a:hover{
   flex: 1 0 auto;
 }
 
-.Hidden {
-  display: none;
-}
-
 .Footer {
   margin-top: 32px;
   flex-shrink: 0;

@@ -30,7 +30,6 @@ export default class Artifier {
           let newImgData = new ImageData(this.artFunction(canvasCtx, newWidth, newHeight), newWidth);
 
           canvasCtx.putImageData(newImgData, 0, 0);
-          document.querySelector('.Footer').classList.remove('Hidden');
         };
       });
     });
