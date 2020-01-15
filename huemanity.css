@@ -32,5 +32,6 @@ h2 {
 
 .Uploader {
   display: block;
+  padding-top: 8px;
   padding-bottom: 20px;
 }

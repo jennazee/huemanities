@@ -18,18 +18,16 @@ export default class Artifier {
         };
         reader.readAsDataURL(e.target.files[0]);
         img.onload = () => {
-          if (img.height * img.width > 20000000 ) {
-            document.querySelector('.Error').classList.remove('Hidden');
-            return;
-          } else {
-            document.querySelector('.Error').classList.add('Hidden');
-          }
-          canvas.height = img.height;
-          canvas.width = img.width;
-          canvasCtx.drawImage(img, 0, 0);
+          const newHeight = document.querySelector('.Content').offsetHeight - document.querySelector('.UploadWrapper').offsetHeight;
+          const scaleFactor = newHeight / img.height;
+          const newWidth = Math.round(img.width * scaleFactor);
+        
+          canvas.height = newHeight;
+          canvas.width = newWidth;
+          canvasCtx.drawImage(img, 0, 0, newWidth, newHeight);
 
-          //"this" needs to be Artifier
-          let newImgData = new ImageData(this.artFunction(canvasCtx, canvas.width, canvas.height), img.width);
+          // "this" needs to be Artifier
+          let newImgData = new ImageData(this.artFunction(canvasCtx, newWidth, newHeight), newWidth);
 
           canvasCtx.putImageData(newImgData, 0, 0);
           document.querySelector('.Footer').classList.remove('Hidden');
@@ -118,8 +116,8 @@ export default class Artifier {
     return [...rgb, 255];
   }
 
-  getPixelAt(h, w, imWidth, imageData) {
-    let redIndex = 4 * h * imWidth + w * 4;
+  getPixelAt(h, w, imgWidth, imageData) {
+    let redIndex = 4 * h * imgWidth + w * 4;
     let red = imageData[redIndex];
     let green = imageData[redIndex + 1];
     let blue = imageData[redIndex + 2];

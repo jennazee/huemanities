@@ -16,17 +16,15 @@
     </header>
 
     <div class="Content">
-      <h2>Upload a picture!</h2>
-      <input type="file" name="photo" class="Uploader" />
-      <div class="Error Hidden">
-        <h2>Hi. Um. Sorry. This is awkward.</h2>
-        <p>I am made of JavaScript and that image has more than 20 million pixels in it which is too many pixels for me to not crash your browser. Try another one?</p>
+      <div class="UploadWrapper">
+        <label class="Label" for="photo">Upload a picture!</label>
+        <input type="file" name="photo" class="Uploader" />
       </div>
       <canvas class="Canvas"></canvas>
     </div>
 
-    <footer class="Footer Hidden">
-      <h2>Cool, what's it doing?</h2>
+    <footer class="Footer">
+      <h2>Cool, what's it do?</h2>
       <p>All the colors are swapped out for whichever of the English
         <a target="_blank" href="https://en.wikipedia.org/wiki/Color_term#Basic_colour_terms">"basic color term"</a>
         <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value">CSS colors</a> has the closest
@@ -34,6 +32,7 @@
         <a target="_blank" href="https://en.wikipedia.org/wiki/Euclidean_distance">Euclidean distance</a>.
       </p>
       <p>Is this a reasonable thing to do? Who knows.</p>
+      <p><a target="_blank" href="https://github.com/jennazee/huemanities">Code</a></p>
     </footer>
   </body>
 
