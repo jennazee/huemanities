@@ -40,13 +40,17 @@ export default class Artifier {
     return new Uint8ClampedArray(ctx.getImageData(0, 0, width, height).data);
   }
 
-  rgbToHsl(rgb) {
-    let r = rgb[0]/255;
-    let g = rgb[1]/255;
-    let b = rgb[2]/255;
 
-    let max = Math.max(r, g, b);
-    let min = Math.min(r, g, b);
+  // https://gist.github.com/emanuel-sanabria-developer/5793377
+  rgbToHsl(rgb) {
+    // get all values as percentages
+    const r = rgb[0]/255;
+    const g = rgb[1]/255;
+    const b = rgb[2]/255;
+
+    // find min and max values
+    const max = Math.max(r, g, b);
+    const min = Math.min(r, g, b);
 
     let h, s;
     let l = (max + min)/2;
@@ -65,33 +69,6 @@ export default class Artifier {
       h /= 6;
     }
     return [h * 360, s * 100, l * 100];
-  }
-
-  rgbToHslForHumans(rgb) {
-    let r = rgb[0]/255;
-    let g = rgb[1]/255;
-    let b = rgb[2]/255;
-
-    let max = Math.max(r, g, b);
-    let min = Math.min(r, g, b);
-
-    let h, s;
-    let l = (max + min)/2;
-
-    if (max === min) {
-      h = s = 0;
-    } else {
-      let d = max - min;
-      s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-
-      switch (max) {
-        case r: h = (g - b) / d + (g < b ? 6 : 0); break;
-        case g: h = (b - r) / d + 2; break;
-        case b: h = (r - g) / d + 4; break;
-      }
-      h /= 6;
-    }
-    return [h * 360, 50, 50];
   }
 
   rgbaToRgb(rgba) {
