@@ -25,12 +25,13 @@ class BasicColorTerminalHsl extends Artifier {
 
         let closest;
         let minDist = 1000000000; // temporary
+
         for (let i = 0; i < colors.length; i++) {
           let color = colors[i];
-          let redDiff = color[0] - current[0];
-          let greenDiff = color[1] - current[1];
-          let blueDiff = color[2] - current[2]
-          let dist = (redDiff * redDiff) + (greenDiff * greenDiff) + (blueDiff * blueDiff);
+          let hDiff = color[0] - current[0];
+          let sDiff = color[1] - current[1];
+          let lDiff = color[2] - current[2]
+          let dist = (hDiff * hDiff) + (sDiff * sDiff) + (lDiff * lDiff);
           if (dist < minDist) {
             minDist = dist;
             closest = i;
@@ -44,5 +45,3 @@ class BasicColorTerminalHsl extends Artifier {
 }
 
 const bct = new BasicColorTerminalHsl();
-
-
