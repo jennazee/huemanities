@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>huemanities</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="bctlab-bundle.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="huemanity.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>basic color terminal (CIELAB)</h1>
+    </header>
+
+    <div class="Content">
+      <div class="UploadWrapper">
+        <label class="Label" for="photo">Upload a picture!</label>
+        <input type="file" name="photo" class="Uploader" />
+      </div>
+      <canvas class="Canvas"></canvas>
+    </div>
+
+    <footer class="Footer">
+      <h2>Cool, what's it do?</h2>
+      <p>
+        All the pixels are "rounded" to whatever English
+        <a
+          target="_blank"
+          href="https://en.wikipedia.org/wiki/Color_term#Basic_colour_terms"
+          >"basic color term"</a
+        >
+        (think Crayola marker ten-pack + white)
+        <a
+          target="_blank"
+          href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value"
+          >CSS color</a
+        >
+        is the closest based on the
+        <a
+          target="_blank"
+          href="https://en.wikipedia.org/wiki/Euclidean_distance"
+          >Euclidean distance</a
+        >
+        between their
+        <a
+          target="_blank"
+          href="https://en.wikipedia.org/wiki/CIELAB_color_space"
+          >CIELAB color space</a
+        >
+        values.
+      </p>
+      <p>Is this a reasonable thing to do? Who knows.</p>
+      <p><a target="_blank" href="index.html">More of these things</a></p>
+      <p>
+        <a target="_blank" href="https://github.com/jennazee/huemanities"
+          >Code</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile-bct": "browserify BasicColorTerminal.js -o bct-bundle.js -t [ babelify --presets [ es2015 ] ] -t uglifyify",
-    "compile-bct-hsl": "browserify BasicColorTerminalHsl.js -o bcthsl-bundle.js -t [ babelify --presets [ es2015 ] ] -t uglifyify"
+    "compile-bct-hsl": "browserify BasicColorTerminalHsl.js -o bcthsl-bundle.js -t [ babelify --presets [ es2015 ] ] -t uglifyify",
+    "compile-bct-lab": "browserify BasicColorTerminalLab.js -o bctlab-bundle.js -t [ babelify --presets [ es2015 ] ] -t uglifyify"
   },
   "repository": {
     "type": "git",
@@ -28,5 +29,6 @@
       "uglifyify"
     ]
   },
-  "homepage": "https://github.com/jennazee/huemanities#readme"
+  "homepage": "https://github.com/jennazee/huemanities#readme",
+  "dependencies": {}
 }
